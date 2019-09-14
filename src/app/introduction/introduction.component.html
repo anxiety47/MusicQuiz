@@ -1,0 +1,22 @@
+<div class='container'>
+
+  <div>Witam serdecznie, tu będzie jakiś napis wyjaśniający co jest w tej jakże pięknej aplikacji</div>
+  <div>Opcyjki:</div>
+  <br>
+  <div>
+    <div class='option' id='div1' (click)='test($event)'>{{options[0]}}</div>
+    <div class='option' id='div2' (click)='test($event)'>{{options[1]}}</div>
+    <div class='option' id='div3' (click)='test($event)'>{{options[2]}}</div>
+  </div>
+  <br>
+  <ng-container *ngIf="optionChecked">
+    <p>Wybierz gatunek(?)</p>
+    <ng-container *ngFor='let category of categories'>
+      <button class='category'> {{category}}</button>
+    </ng-container>
+
+    <br>
+    <button class='start-button'>Start</button>
+  </ng-container>
+
+</div>

@@ -1,0 +1,41 @@
+.container {
+    text-align: center;
+}
+
+.option {
+    width: 20%;
+    min-height: 20rem;
+    background-color: cornflowerblue;
+    display: inline-block;
+    margin: 3%;
+    text-align: center;
+    font-size: x-large;
+}
+
+.option:hover {
+    background-color: deepskyblue
+}
+
+/* nie działa */
+.option:focus {
+    border: 2px solid blue;
+}
+
+.category {
+    background-color: salmon;
+    display: inline-block;
+    border: 1px solid black;
+    padding: 0.2rem;
+}
+
+.category:active {
+    background-color: blue
+}
+
+.start-button {
+    margin: 1rem;
+    padding: 0.3rem;
+    
+}
+
+.highlight{ background-color: green }
