@@ -9,6 +9,11 @@ import { IntroductionComponent } from './introduction/introduction.component';
 import { QuizComponent } from './quiz/quiz.component';
 import { SummaryComponent } from './summary/summary.component';
 import { appRoutes } from './routes';
+import { HttpClientModule } from '@angular/common/http';
+
+import {MatButtonModule} from '@angular/material/button';
+import {MatButtonToggleModule, MatIconModule} from '@angular/material';
+import { QuizService } from './quiz.service';
 
 @NgModule({
   declarations: [
@@ -22,9 +27,12 @@ import { appRoutes } from './routes';
     FormsModule,
     HttpModule,
     RouterModule.forRoot(appRoutes),
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    MatButtonModule,
+    MatButtonToggleModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [QuizService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

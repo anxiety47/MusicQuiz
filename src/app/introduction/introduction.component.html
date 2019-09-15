@@ -4,19 +4,32 @@
   <div>Opcyjki:</div>
   <br>
   <div>
-    <div class='option' id='div1' (click)='test($event)'>{{options[0]}}</div>
-    <div class='option' id='div2' (click)='test($event)'>{{options[1]}}</div>
-    <div class='option' id='div3' (click)='test($event)'>{{options[2]}}</div>
+    <ng-container *ngFor='let mode of quizMode | keyvalue'>
+      <div class='option' id='{{ mode.key }}' (click)='test($event)'>{{mode.value}}</div>
+      <!-- <div class='option' id='div2' (click)='test($event)'>{{quizMode[1]}}</div>
+    <div class='option' id='div3' (click)='test($event)'>{{quizMode[2]}}</div> -->
+    </ng-container>
   </div>
   <br>
-  <ng-container *ngIf="optionChecked">
+  <ng-container *ngIf="quizModeChecked">
     <p>Wybierz gatunek(?)</p>
-    <ng-container *ngFor='let category of categories'>
-      <button class='category'> {{category}}</button>
-    </ng-container>
+    <!-- <ng-container *ngFor='let category of categories'>
+      <button class='category'> {{category}}</button>  
+     </ng-container> -->
+
+    <mat-button-toggle-group #group="matButtonToggleGroup" name="fontStyle" 
+                              aria-label="Font Style" multiple="true" [(ngModel)]="selectedCategories">
+      <ng-container *ngFor='let category of categories | keyvalue'>
+        <mat-button-toggle value="{{category.key}}">{{category.value}}</mat-button-toggle>
+        <!-- <mat-button-toggle value="italic">Italic</mat-button-toggle>
+      <mat-button-toggle value="underline">Underline</mat-button-toggle> -->
+      </ng-container>
+    </mat-button-toggle-group>
+    Wybrane: {{group.value}}
+
 
     <br>
-    <button class='start-button'>Start</button>
+    <button class='start-button' (click)="startQuiz()">Start</button>
   </ng-container>
 
 </div>

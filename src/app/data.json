@@ -1,0 +1,34 @@
+{
+    "questions": [
+     {
+       "id" : 100,
+      "text" : "Kto dowodził armią Gotów w 410 roku?",
+      "answers" : [
+        "Edward Rydz Śmigły",
+        "Napolean Bonaparte",
+        "Kopytko",
+        "Pan z numerem 4"
+        ]
+     }, 
+     {
+       "id" : 101,
+      "text" : "Kto jest największym rakiem na jutube?",
+      "answers" : [
+        "Ja",
+        "Troom Troom",
+        "Slodka Ada",
+        "Dubiel"
+        ]
+     }, 
+     {
+       "id" : 102,
+      "text" : "Generyczne pytanie nr 102",
+      "answers" : [
+        "A",
+        "B",
+        "C",
+        "D"
+        ]
+     }, 
+    ]
+  }
