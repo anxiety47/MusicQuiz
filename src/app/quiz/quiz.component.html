@@ -2,14 +2,18 @@
   quiz works!
 </p>
 <div *ngIf="quizService.questions">
-  <div>
-    {{ quizService.questions[quizService.currentQuestion].id}}
-    {{ quizService.questions[quizService.currentQuestion].text}}
+  <div class="question-container">
+    <div class="question">
+      {{ quizService.questions[quizService.currentQuestion].id}}
+      {{ quizService.questions[quizService.currentQuestion].text}}
+    </div>
     <div class="timer">{{ quizService.time }} </div>
   </div>
-  <div *ngFor="let answer of quizService.questions[quizService.currentQuestion].answers" style="display: inline-block">
-    <button class="answer" (click)="answerQuestion(answer.id)"> {{ answer.text }} </button>
-
+  <br>
+  <div class="answers">
+    <div class="answer-container" *ngFor="let answer of quizService.questions[quizService.currentQuestion].answers">
+      <button class="answer" (click)="answerQuestion(answer.id)"> {{ answer.text }} </button>
+    </div>
   </div>
 </div>
 <!-- <div *ngFor="let question of questions">

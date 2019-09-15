@@ -1,12 +1,39 @@
+.question-container {
+    display: inline-block;
+    width: 100%;
+}
+
+.question {
+    width: 80%;
+    height: 5rem;
+    background-color: coral;
+    display: inline-block;
+    contain: strict;
+    font-size: 2rem;
+}
+
+.timer {
+    width: 20%;
+    height: 5rem;
+    background-color: aqua;
+    font-size: 4rem;
+    display: inline-block;
+    contain: strict;
+    text-align: center;
+}
+
 .answer {
     width: 200px;
     height: 200px;
     background-color: salmon;
     contain: strict;
+    font-size: 2rem;
 }
 
-.timer {
-    width: 100px;
-    height: 100px;
-    background-color: aqua;
+.answer-container {
+    display: inline-block;
+}
+
+.answers {
+    background-color: lightgreen;
 }

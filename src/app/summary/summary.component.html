@@ -1,3 +1,26 @@
 <p>
   summary works!
 </p>
+
+<h3>Questions with correct answer</h3>
+    <ng-container *ngFor="let question of quizService.questions; let i=index">
+        <div class="card blue-grey darken-1">
+            <div class="card-content white-text">
+                <span class="card-title">{{i+1}}</span>
+                {{question.text}}
+                id odp ok: {{ question.correctAnswerId}}
+            </div>
+
+            <div class="card-action">
+                <ul class="collection">
+                    <ng-container *ngFor="let answer of question.answers; let j = index">
+                        <li *ngIf="answer != null" class="collection-item" 
+                            [ngClass]="{'correct-answer': answer.id == question.correctAnswerId,
+                                        'wrong-answer': answer.id == question.userAnswerId && question.userAnswerId != question.correctAnswerId}">
+                            {{answer.text}} user={{question.userAnswerId}} correct={{ question.correctAnswerId}} ans={{answer.id}}
+                        </li>
+                    </ng-container>
+                </ul>
+            </div>
+        </div>
+    </ng-container>

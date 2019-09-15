@@ -19,14 +19,18 @@ export class SummaryComponent implements OnInit, OnDestroy {
 
       this.quizService.getAnswers().subscribe(
         (data: any) => {
+          this.quizService.questions = data;
+          console.log("get answers called");
+
           this.quizService.correctAnswersCount = 0;
           // this.quizService.questions.forEach((element, index) => {
           //   if (element.answer == data[index])
           //     this.quizService.correctAnswersCount++;
           //   element.correct = data[index];
           // });
-          for(let element in data) {
-            if (data.userAnswerId === data.correctAnswerId) {
+          for(let element of this.quizService.questions) {
+            if (element.userAnswerId == element.correctAnswerId) {
+              console.log("user=", element.userAnswerId, " correct=", element.correctAnswerId)
               this.quizService.correctAnswersCount++;
             }
           }
@@ -41,7 +45,6 @@ export class SummaryComponent implements OnInit, OnDestroy {
     //TODO: remove after adding routing from summary component
     localStorage.clear();
   }
-
 
   ngOnDestroy() {
     localStorage.clear();

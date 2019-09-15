@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
+import { Question } from './quiz/question.model';
 
 @Injectable({
   providedIn: 'root'
@@ -11,7 +12,7 @@ export class QuizService {
 
   mode;
   categories;
-  questions = [];
+  questions = Array<Question>();
   currentQuestion: number;
   correctAnswersCount;
 
