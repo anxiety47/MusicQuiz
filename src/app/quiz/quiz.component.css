@@ -1,0 +1,12 @@
+.answer {
+    width: 200px;
+    height: 200px;
+    background-color: salmon;
+    contain: strict;
+}
+
+.timer {
+    width: 100px;
+    height: 100px;
+    background-color: aqua;
+}
