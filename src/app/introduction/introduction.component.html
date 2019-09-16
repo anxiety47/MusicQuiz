@@ -3,24 +3,30 @@
   <div>Witam serdecznie, tu będzie jakiś napis wyjaśniający co jest w tej jakże pięknej aplikacji</div>
   <div>Opcyjki:</div>
   <br>
-  <div>
+  <mat-button-toggle-group #group="matButtonToggleGroup" name="fontStyle" aria-label="Font Style"
+    [(ngModel)]="selectedMode">
     <ng-container *ngFor='let mode of quizMode | keyvalue'>
-      <div class='option' id='{{ mode.key }}' (click)='test($event)'>{{mode.value}}</div>
-      <!-- <div class='option' id='div2' (click)='test($event)'>{{quizMode[1]}}</div>
-    <div class='option' id='div3' (click)='test($event)'>{{quizMode[2]}}</div> -->
+      <mat-button-toggle class='option' value="{{mode.key}}" id="{{mode.key}}" (click)='test($event)'>{{mode.value}}
+      </mat-button-toggle>
     </ng-container>
-  </div>
+  </mat-button-toggle-group>
+  <!-- <div>
+    <ng-container *ngFor='let mode of quizMode | keyvalue'>
+      <button class='option' id='{{ mode.key }}' (click)='test($event)'>{{mode.value}}</button>
+
+    </ng-container>
+  </div> -->
   <br>
   <ng-container *ngIf="quizModeChecked">
-    <p>Wybierz gatunek(?)</p>
+    <p>Wybierz gatunek</p>
     <!-- <ng-container *ngFor='let category of categories'>
       <button class='category'> {{category}}</button>  
      </ng-container> -->
 
-    <mat-button-toggle-group #group="matButtonToggleGroup" name="fontStyle" 
-                              aria-label="Font Style" multiple="true" [(ngModel)]="selectedCategories">
+    <mat-button-toggle-group #group="matButtonToggleGroup" name="fontStyle" aria-label="Font Style" multiple="true"
+      [(ngModel)]="selectedCategories">
       <ng-container *ngFor='let category of categories | keyvalue'>
-        <mat-button-toggle value="{{category.key}}">{{category.value}}</mat-button-toggle>
+        <mat-button-toggle class="category" value="{{category.key}}">{{category.value}}</mat-button-toggle>
         <!-- <mat-button-toggle value="italic">Italic</mat-button-toggle>
       <mat-button-toggle value="underline">Underline</mat-button-toggle> -->
       </ng-container>
@@ -29,7 +35,9 @@
 
 
     <br>
-    <button class='start-button' (click)="startQuiz()">Start</button>
+    <ng-container *ngIf="selectedCategories">
+      <button class='start-button' (click)="startQuiz()">Start</button>
+    </ng-container>
   </ng-container>
 
 </div>

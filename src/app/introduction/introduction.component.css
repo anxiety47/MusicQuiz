@@ -5,37 +5,70 @@
 .option {
     width: 20%;
     min-height: 20rem;
-    background-color: cornflowerblue;
+    background-color: #006;
+    color:white;
     display: inline-block;
     margin: 3%;
     text-align: center;
-    font-size: x-large;
+    font-size: 2.5rem;
     contain: strict;
+    padding: 0.5rem;
+    white-space: pre-wrap;
 }
 
 .option:hover {
-    background-color: deepskyblue
+  background: #339;
+  cursor: pointer;
 }
 
-/* nie działa */
 .option:focus {
-    border: 2px solid blue;
+    background: #393;
+    border-color: #80ff80;
+    color: black;
+  }
+
+.selected-mode {
+    background: #393;
+    border-color: #80ff80;
+    color: black;
 }
 
 .category {
-    background-color: salmon;
+    width: 20%;
+    min-height: 3rem;
+    background-color: #660000;
+    color:white;
     display: inline-block;
-    border: 1px solid black;
+    margin: 2px;
+    text-align: center;
+    font-size: 1rem;
+    contain: strict;
     padding: 0.2rem;
+    white-space: pre-wrap;
 }
 
-.category:active {
-    background-color: blue
-}
 
 .start-button {
     margin: 1rem;
     padding: 0.3rem;
+    background-color: #006600;
+    width: 20%;
+    height: 3rem;
+    font-size: 1.5rem;
+    color: white;
 }
 
 .highlight{ background-color: green }
+
+mat-button-toggle-group {
+    width: 100%;
+    justify-content: center;
+}
+
+.mat-button-toggle-checked.category {
+    background-color: red;
+}
+
+.mat-button-toggle-checked.option {
+    background-color: blue;
+}

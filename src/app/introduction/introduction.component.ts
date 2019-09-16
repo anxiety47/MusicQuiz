@@ -32,6 +32,10 @@ export class IntroductionComponent implements OnInit {
     this.categories3.set("2", "Pop");
     this.categories3.set("3", "Lata 90.");
     this.categories3.set("4", "Inne");
+    this.categories3.set("5", "Inne");
+    this.categories3.set("6", "Inne");
+    this.categories3.set("7", "Inne");
+    this.categories3.set("8", "Inne");
     
     this.quizMode.set("mode1", "Zgadnij tytuł piosenki");
     this.quizMode.set("mode2", "Zgadnij autora piosenki");
@@ -43,6 +47,17 @@ export class IntroductionComponent implements OnInit {
 
   test(event) {
     let elementId: string = event.target.id;
+    // let elementClasses = document.getElementById(elementId).classList;
+    // if (elementClasses.contains("selected-mode")) {
+    //   elementClasses.remove("selected-mode");
+    // } else {
+    //   elementClasses.add("selected-mode");
+    // }
+
+    // event.addEventListener('click', () => {
+    //   elementClasses.toggle('selected-mode');
+    // });
+
     console.log("klik", elementId);
     this.quizModeChecked = true;
     if (elementId == 'mode1') {
