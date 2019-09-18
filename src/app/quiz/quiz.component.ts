@@ -67,6 +67,10 @@ export class QuizComponent implements OnInit {
       this.router.navigate(['/summary']);
     }
   }
+
+  skipQuestion(question) {
+    localStorage.removeItem(question);
+  }
 }
 /*
 if (parseInt(localStorage.getItem('seconds')) > 0) {

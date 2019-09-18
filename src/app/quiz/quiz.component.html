@@ -13,6 +13,9 @@
       <a class="answer"> {{ answer.text }} </a>
     </div>
   </div>
+  <div>
+      <button class="skip-button" (click)="skipQuestion(quizService.questions[quizService.currentQuestion])">Pomiń pytanie</button>
+  </div>
 </div>
 <!-- <div *ngFor="let question of questions">
   {{ question.id }}
