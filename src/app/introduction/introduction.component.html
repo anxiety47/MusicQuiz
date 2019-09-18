@@ -5,8 +5,9 @@
   <br>
   <mat-button-toggle-group #group="matButtonToggleGroup" name="fontStyle" aria-label="Font Style"
     [(ngModel)]="selectedMode">
-    <ng-container *ngFor='let mode of quizMode | keyvalue'>
-      <mat-button-toggle class='option' value="{{mode.key}}" id="{{mode.key}}" (click)='test($event)'>{{mode.value}}
+    <ng-container *ngFor='let mode of quizMode'>
+      {{mode.id}}
+      <mat-button-toggle class='option' value="{{mode.id}}" id="{{mode.id}}" (click)='test($event)'>{{mode.name}}
       </mat-button-toggle>
     </ng-container>
   </mat-button-toggle-group>
@@ -25,8 +26,8 @@
 
     <mat-button-toggle-group #group="matButtonToggleGroup" name="fontStyle" aria-label="Font Style" multiple="true"
       [(ngModel)]="selectedCategories">
-      <ng-container *ngFor='let category of categories | keyvalue'>
-        <mat-button-toggle class="category" value="{{category.key}}">{{category.value}}</mat-button-toggle>
+      <ng-container *ngFor='let category of categories'>
+        <mat-button-toggle class="category" value="{{category.id}}">{{category.name}}</mat-button-toggle>
         <!-- <mat-button-toggle value="italic">Italic</mat-button-toggle>
       <mat-button-toggle value="underline">Underline</mat-button-toggle> -->
       </ng-container>

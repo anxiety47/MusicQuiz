@@ -30,13 +30,19 @@ export class QuizComponent implements OnInit {
       console.log('first question')
       // this.quizService.seconds = 0;
       this.quizService.currentQuestion = 0;
+      console.log('current question', this.quizService.currentQuestion)
       this.quizService.getQuestions().subscribe(
         (data: any) => {
           console.log('get questions');
           this.quizService.questions = data;
+
+          console.log("ile pytan", this.quizService.questions)
+
           this.quizService.startTimer();
         }
       );
+      for( let i in this.quizService.questions)
+        console.log("ile pytan", i.id)
     }
 
     // this.quizService.currentQuestion = 0;
@@ -50,7 +56,7 @@ export class QuizComponent implements OnInit {
 
   answerQuestion(answerId) {
     console.log("id odp:", answerId);
-    this.quizService.questions[this.quizService.currentQuestion].answer = answerId;
+    this.quizService.questions[this.quizService.currentQuestion].userAnswerId = answerId;
     localStorage.setItem('questions', JSON.stringify(this.quizService.questions));
     this.quizService.currentQuestion++;
     localStorage.setItem('currentQuestion', this.quizService.currentQuestion.toString());
